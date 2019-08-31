@@ -52,13 +52,13 @@ curl -XGET "${OPENFAAS_URL}/function/streamtest"
 ## Test result
 
 Despite being in streaming mode, the first part of the response is sent only after 10 seconds 
-(when a timeout is triggered) and the rest of the response is not sent at all.
+(supposedly when a timeout is triggered) and the rest of the response is not sent at all.
 
 
-## Test different configuration within OpenFasS
+## Test of different configurations within OpenFasS
 
-Change the `./streamtest.yml` file to test with different combination of OF-Watchdog options ,
-thebBuild and deploy the function:
+You can change the `./streamtest.yml` file to test different combinations of OF-Watchdog options,
+after every change, you have to build and deploy the function:
 ```bash
 export OPENFAAS_URL='http://0.0.0.0:8080'
 faas build streamtest -yaml ./streamtest.yml --no-cache 
