@@ -1,0 +1,10 @@
+provider:
+  name: faas
+  gateway: http://0.0.0.0:8080
+
+functions:
+  streamtest:
+    lang: node10-express-service
+    handler: ./streamtest
+    image: streamtest:latest
+    mode: streaming
